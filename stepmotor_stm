@@ -1,1 +1,166 @@
+/* mbed Microcontroller Library
+ * Copyright (c) 2019 ARM Limited
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
+#include "mbed.h"
+#include "platform/mbed_thread.h"
+
+
+// Blinking rate in milliseconds
+#define BLINKING_RATE_MS       500
+
+float   PIN_B,PIN_R,PIN_G,PIN_C
+
+PWMOut PIN_B();
+PWMOut PIN_R(); 
+PWMOut PIN_G();
+PWMOut PIN_C();
+
+int wait_time = 25;
+
+int main()
+{
+    
+    seiten();
+ 
+}
+
+int seiten(){
+
+//step1
+  PIN_B = 1;
+  PIN_R = 0;
+  PIN_G = 0;
+  PIN_C = 0.3;
+  ThisThread::sleep_for(wait_time);
+
+//step2
+  PIN_B = 1;
+  PIN_R = 0.3;
+  PIN_G = 0;
+  PIN_C = 0;
+  ThisThread::sleep_for(wait_time);
+
+//step3
+  PIN_B = 0;
+  PIN_R = 0.3;
+  PIN_G = 1;
+  PIN_C = 0;
+  ThisThread::sleep_for(wait_time);
+
+//step4
+  PIN_B = 0;
+  PIN_R = 0;
+  PIN_G = 1;
+  PIN_C = 0.3;
+  ThisThread::sleep_for(wait_time);
+
+  
+
+}
+
+int seitenGO(){
+  for(int i=0;i<17;i++){
+    //step1
+    PIN_B = 1;
+    PIN_R = 0;
+    PIN_G = 0;
+    PIN_C = 0.3;
+    ThisThread::sleep_for(wait_time);
+
+    //step2
+    PIN_B = 1;
+    PIN_R = 0.3;
+    PIN_G = 0;
+    PIN_C = 0;
+    ThisThread::sleep_for(wait_time);
+
+    //step3
+    PIN_B = 0;
+    PIN_R = 0.3;
+    PIN_G = 1;
+    PIN_C = 0;
+    ThisThread::sleep_for(wait_time);
+
+    //step4
+    PIN_B = 0;
+    PIN_R = 0;
+    PIN_G = 1;
+    PIN_C = 0.3;
+    ThisThread::sleep_for(wait_time);
+    }
+
+}
+
+int hanten(){
+
+//step2
+  PIN_B = 1;
+  PIN_R = 0.3;
+  PIN_G = 0;
+  PIN_C = 0;
+  ThisThread::sleep_for(wait_time);
+
+//step1
+  PIN_B = 1;
+  PIN_R = 0;
+  PIN_G = 0;
+  PIN_C = 0.3;
+  ThisThread::sleep_for(wait_time);
+
+
+//step4
+  PIN_B = 0;
+  PIN_R = 0;
+  PIN_G = 1;
+  PIN_C = 0.3;
+  ThisThread::sleep_for(wait_time);
+
+
+//step3
+  PIN_B = 0;
+  PIN_R = 0.3;
+  PIN_G = 1;
+  PIN_C = 0;
+  ThisThread::sleep_for(wait_time);
+
+}
+
+int hantenGO(){
+  for(int i=0;i<17;i++){
+ 
+
+ //step2
+    PIN_B = 1;
+    PIN_R = 0.3;
+    PIN_G = 0;
+    PIN_C = 0;
+    ThisThread::sleep_for(wait_time);
+
+ //step1
+    PIN_B = 1;
+    PIN_R = 0;
+    PIN_G = 0;
+    PIN_C = 0;
+    ThisThread::sleep_for(wait_time);
+
+
+//step4
+    PIN_B = 0;
+    PIN_R = 0;
+    PIN_G = 1;
+    PIN_C = 0.3;
+    ThisThread::sleep_for(wait_time);
+
+    
+//step3
+    PIN_B = 0;
+    PIN_R = 0.3;
+    PIN_G = 1;
+    PIN_C = 0;
+    ThisThread::sleep_for(wait_time);
+  }
+
+    
+}
