@@ -1,8 +1,3 @@
-/* mbed Microcontroller Library
- * Copyright (c) 2019 ARM Limited
- * SPDX-License-Identifier: Apache-2.0
- */
-
 #include "mbed.h"
 #include "platform/mbed_thread.h"
 
@@ -10,12 +5,17 @@
 // Blinking rate in milliseconds
 #define BLINKING_RATE_MS       500
 
-float   PIN_B,PIN_R,PIN_G,PIN_C
+float   PIN_B,PIN_R,PIN_G,PIN_C;
+/*prottype call*/
+void seiten();
+void hanten();
+void seitenGO();
+void hantenGO();
 
-PWMOut PIN_B();
-PWMOut PIN_R(); 
-PWMOut PIN_G();
-PWMOut PIN_C();
+PwmOut PIN_B(PB_3); //D3
+PwmOut PIN_R(PB_4); //D5
+PwmOut PIN_G(PB_10); //D6
+PwmOut PIN_C(PC_7); //D9
 
 int wait_time = 25;
 
@@ -23,91 +23,92 @@ int main()
 {
     
     seiten();
+    return 0;
  
 }
 
-int seiten(){
+void seiten(){
 
 //step1
   PIN_B = 1;
   PIN_R = 0;
   PIN_G = 0;
   PIN_C = 0.3;
-  ThisThread::sleep_for(wait_time);
+  
 
 //step2
   PIN_B = 1;
   PIN_R = 0.3;
   PIN_G = 0;
   PIN_C = 0;
-  ThisThread::sleep_for(wait_time);
+  
 
 //step3
   PIN_B = 0;
   PIN_R = 0.3;
   PIN_G = 1;
   PIN_C = 0;
-  ThisThread::sleep_for(wait_time);
+  
 
 //step4
   PIN_B = 0;
   PIN_R = 0;
   PIN_G = 1;
   PIN_C = 0.3;
-  ThisThread::sleep_for(wait_time);
+  
 
   
 
 }
 
-int seitenGO(){
+void seitenGO(){
   for(int i=0;i<17;i++){
     //step1
     PIN_B = 1;
     PIN_R = 0;
     PIN_G = 0;
     PIN_C = 0.3;
-    ThisThread::sleep_for(wait_time);
+    
 
     //step2
     PIN_B = 1;
     PIN_R = 0.3;
     PIN_G = 0;
     PIN_C = 0;
-    ThisThread::sleep_for(wait_time);
+    
 
     //step3
     PIN_B = 0;
     PIN_R = 0.3;
     PIN_G = 1;
     PIN_C = 0;
-    ThisThread::sleep_for(wait_time);
+   
 
     //step4
     PIN_B = 0;
     PIN_R = 0;
     PIN_G = 1;
     PIN_C = 0.3;
-    ThisThread::sleep_for(wait_time);
+    
     }
 
 }
 
-int hanten(){
+void hanten(){
 
 //step2
   PIN_B = 1;
   PIN_R = 0.3;
   PIN_G = 0;
   PIN_C = 0;
-  ThisThread::sleep_for(wait_time);
+
 
 //step1
   PIN_B = 1;
   PIN_R = 0;
   PIN_G = 0;
   PIN_C = 0.3;
-  ThisThread::sleep_for(wait_time);
+  
 
 
 //step4
@@ -115,7 +116,7 @@ int hanten(){
   PIN_R = 0;
   PIN_G = 1;
   PIN_C = 0.3;
-  ThisThread::sleep_for(wait_time);
+  
 
 
 //step3
@@ -123,11 +124,11 @@ int hanten(){
   PIN_R = 0.3;
   PIN_G = 1;
   PIN_C = 0;
-  ThisThread::sleep_for(wait_time);
+
 
 }
 
-int hantenGO(){
+void hantenGO(){
   for(int i=0;i<17;i++){
  
 
@@ -136,14 +137,14 @@ int hantenGO(){
     PIN_R = 0.3;
     PIN_G = 0;
     PIN_C = 0;
-    ThisThread::sleep_for(wait_time);
+    
 
  //step1
     PIN_B = 1;
     PIN_R = 0;
     PIN_G = 0;
     PIN_C = 0;
-    ThisThread::sleep_for(wait_time);
+    
 
 
 //step4
@@ -151,7 +152,7 @@ int hantenGO(){
     PIN_R = 0;
     PIN_G = 1;
     PIN_C = 0.3;
-    ThisThread::sleep_for(wait_time);
+    
 
     
 //step3
@@ -159,8 +160,9 @@ int hantenGO(){
     PIN_R = 0.3;
     PIN_G = 1;
     PIN_C = 0;
-    ThisThread::sleep_for(wait_time);
+    
   }
 
     
 }
+
