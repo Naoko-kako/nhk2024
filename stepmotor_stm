@@ -5,7 +5,7 @@
 // Blinking rate in milliseconds
 #define BLINKING_RATE_MS       500
 
-float   PIN_B,PIN_R,PIN_G,PIN_C;
+
 /*prottype call*/
 void seiten();
 void hanten();
@@ -33,19 +33,19 @@ void seiten(){
   PIN_B = 1;
   PIN_R = 0;
   PIN_G = 0;
-  PIN_C = 0.3;
+  PIN_C = 1;
   
 
 //step2
   PIN_B = 1;
-  PIN_R = 0.3;
+  PIN_R = 1;
   PIN_G = 0;
   PIN_C = 0;
   
 
 //step3
   PIN_B = 0;
-  PIN_R = 0.3;
+  PIN_R = 1;
   PIN_G = 1;
   PIN_C = 0;
   
@@ -54,7 +54,7 @@ void seiten(){
   PIN_B = 0;
   PIN_R = 0;
   PIN_G = 1;
-  PIN_C = 0.3;
+  PIN_C = 1;
   
 
   
@@ -67,19 +67,19 @@ void seitenGO(){
     PIN_B = 1;
     PIN_R = 0;
     PIN_G = 0;
-    PIN_C = 0.3;
+    PIN_C = 1;
     
 
     //step2
     PIN_B = 1;
-    PIN_R = 0.3;
+    PIN_R = 1;
     PIN_G = 0;
     PIN_C = 0;
     
 
     //step3
     PIN_B = 0;
-    PIN_R = 0.3;
+    PIN_R =1;
     PIN_G = 1;
     PIN_C = 0;
    
@@ -88,7 +88,7 @@ void seitenGO(){
     PIN_B = 0;
     PIN_R = 0;
     PIN_G = 1;
-    PIN_C = 0.3;
+    PIN_C = 1;
     
     }
 
@@ -98,7 +98,7 @@ void hanten(){
 
 //step2
   PIN_B = 1;
-  PIN_R = 0.3;
+  PIN_R = 1;
   PIN_G = 0;
   PIN_C = 0;
 
@@ -107,7 +107,7 @@ void hanten(){
   PIN_B = 1;
   PIN_R = 0;
   PIN_G = 0;
-  PIN_C = 0.3;
+  PIN_C = 1;
   
 
 
@@ -115,13 +115,13 @@ void hanten(){
   PIN_B = 0;
   PIN_R = 0;
   PIN_G = 1;
-  PIN_C = 0.3;
+  PIN_C = 1;
   
 
 
 //step3
   PIN_B = 0;
-  PIN_R = 0.3;
+  PIN_R = 1;
   PIN_G = 1;
   PIN_C = 0;
 
@@ -134,7 +134,7 @@ void hantenGO(){
 
  //step2
     PIN_B = 1;
-    PIN_R = 0.3;
+    PIN_R = 1;
     PIN_G = 0;
     PIN_C = 0;
     
@@ -151,13 +151,13 @@ void hantenGO(){
     PIN_B = 0;
     PIN_R = 0;
     PIN_G = 1;
-    PIN_C = 0.3;
+    PIN_C = 1;
     
 
     
 //step3
     PIN_B = 0;
-    PIN_R = 0.3;
+    PIN_R = 1;
     PIN_G = 1;
     PIN_C = 0;
     
