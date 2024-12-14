@@ -1,4 +1,4 @@
-nclude "mbed.h"
+#include "mbed.h"
 #include "platform/mbed_thread.h"
 
 #define  N 1000
