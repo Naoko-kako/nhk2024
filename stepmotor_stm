@@ -1,168 +1,25 @@
-#include "mbed.h"
+nclude "mbed.h"
 #include "platform/mbed_thread.h"
 
-
-// Blinking rate in milliseconds
-#define BLINKING_RATE_MS       500
+#define  N 1000
 
 
-/*prottype call*/
-void seiten();
-void hanten();
-void seitenGO();
-void hantenGO();
+DigitalOut STEP_PIN(PB_10); // D6 pulse
+DigitalOut DIR_PIN(PB_4);  // D5 direction
 
-PwmOut PIN_B(PB_3); //D3
-PwmOut PIN_R(PB_4); //D5
-PwmOut PIN_G(PB_10); //D6
-PwmOut PIN_C(PC_7); //D9
+int main(){ 
 
-int wait_time = 25;
-
-int main()
-{
-    
-    seiten();
+    //seiten
+    DIR_PIN = 1;
+    ThisThread::sleep_for(1s);
+    for(int i = 0; i < N ; i++)
+      STEP_PIN = 1;
+      wait_us(50);
+      STEP_PIN = 0;
+      wait_us(50);
+    printf("seiten go.\n");
     return 0;
- 
 }
 
-void seiten(){
 
-//step1
-  PIN_B = 1;
-  PIN_R = 0;
-  PIN_G = 0;
-  PIN_C = 1;
-  
-
-//step2
-  PIN_B = 1;
-  PIN_R = 1;
-  PIN_G = 0;
-  PIN_C = 0;
-  
-
-//step3
-  PIN_B = 0;
-  PIN_R = 1;
-  PIN_G = 1;
-  PIN_C = 0;
-  
-
-//step4
-  PIN_B = 0;
-  PIN_R = 0;
-  PIN_G = 1;
-  PIN_C = 1;
-  
-
-  
-
-}
-
-void seitenGO(){
-  for(int i=0;i<17;i++){
-    //step1
-    PIN_B = 1;
-    PIN_R = 0;
-    PIN_G = 0;
-    PIN_C = 1;
-    
-
-    //step2
-    PIN_B = 1;
-    PIN_R = 1;
-    PIN_G = 0;
-    PIN_C = 0;
-    
-
-    //step3
-    PIN_B = 0;
-    PIN_R =1;
-    PIN_G = 1;
-    PIN_C = 0;
-   
-
-    //step4
-    PIN_B = 0;
-    PIN_R = 0;
-    PIN_G = 1;
-    PIN_C = 1;
-    
-    }
-
-}
-
-void hanten(){
-
-//step2
-  PIN_B = 1;
-  PIN_R = 1;
-  PIN_G = 0;
-  PIN_C = 0;
-
-
-//step1
-  PIN_B = 1;
-  PIN_R = 0;
-  PIN_G = 0;
-  PIN_C = 1;
-  
-
-
-//step4
-  PIN_B = 0;
-  PIN_R = 0;
-  PIN_G = 1;
-  PIN_C = 1;
-  
-
-
-//step3
-  PIN_B = 0;
-  PIN_R = 1;
-  PIN_G = 1;
-  PIN_C = 0;
-
-
-}
-
-void hantenGO(){
-  for(int i=0;i<17;i++){
- 
-
- //step2
-    PIN_B = 1;
-    PIN_R = 1;
-    PIN_G = 0;
-    PIN_C = 0;
-    
-
- //step1
-    PIN_B = 1;
-    PIN_R = 0;
-    PIN_G = 0;
-    PIN_C = 0;
-    
-
-
-//step4
-    PIN_B = 0;
-    PIN_R = 0;
-    PIN_G = 1;
-    PIN_C = 1;
-    
-
-    
-//step3
-    PIN_B = 0;
-    PIN_R = 1;
-    PIN_G = 1;
-    PIN_C = 0;
-    
-  }
-
-    
-}
 
