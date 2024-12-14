@@ -8,7 +8,6 @@ DigitalOut STEP_PIN(PB_10); // D6 pulse
 DigitalOut DIR_PIN(PB_4);  // D5 direction
 
 int main(){ 
-
     //seiten
     DIR_PIN = 1;
     for(int i = 0; i < N ; i++)
